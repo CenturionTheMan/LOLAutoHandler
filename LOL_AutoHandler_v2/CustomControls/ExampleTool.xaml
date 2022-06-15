@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="LOL_AutoHandler_v2.CustomControls.ExampleTool"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LOL_AutoHandler_v2.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800"
+             x:Name="root">
+    
+    <UserControl.Resources>
+        <ImageBrush x:Key="onHover" ImageSource="{Binding BackgroundImageHover}"/>
+        <ImageBrush x:Key="base" ImageSource="{Binding BackgroundImageBase}"/>
+
+
+        <Style x:Key="ButtonStyle" BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="ToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <Ellipse x:Name="bg" Fill="{StaticResource base}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="bg" Property="Fill" Value="{StaticResource onHover}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </UserControl.Resources>
+
+    
+    <Grid>
+
+        <ToggleButton Style="{StaticResource ButtonStyle}"></ToggleButton>
+
+
+    </Grid>
+</UserControl>

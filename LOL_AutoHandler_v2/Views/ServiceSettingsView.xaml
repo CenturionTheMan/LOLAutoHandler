@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="LOL_AutoHandler_v2.Views.ServiceSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LOL_AutoHandler_v2.Views"
+             xmlns:global="clr-namespace:LOL_AutoHandler_v2"
+             xmlns:custom="clr-namespace:LOL_AutoHandler_v2.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000"
+             x:Name="serviceWindow">
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource Darkest}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".1*"/>
+            </Grid.ColumnDefinitions>
+
+            <custom:LaneSelectButton_custom BaseBg="/Images/Top_icon.png"
+                                            Grid.Column="1"
+                                            OnHoverBg="/Images/Top_icon.png"
+                                            OnClickBg="/Images/Top_icon.png"
+                                            OnHoverSize="60"
+                                            Margin="10"
+                                            CustomCommand="{Binding SetLaneIndexCommand}"
+                                            CustomCommandParameter="{StaticResource 0}"/>
+
+            <custom:LaneSelectButton_custom BaseBg="/Images/Jungle_icon.png"
+                                            Grid.Column="2"
+                                            OnHoverBg="/Images/Jungle_icon.png"
+                                            OnClickBg="/Images/Jungle_icon.png"
+                                            OnHoverSize="60" Margin="10"
+                                            CustomCommand="{Binding SetLaneIndexCommand}"
+                                            CustomCommandParameter="{StaticResource 1}"/>
+
+            <custom:LaneSelectButton_custom BaseBg="/Images/Middle_icon.png"
+                                            Grid.Column="3"
+                                            OnHoverBg="/Images/Middle_icon.png"
+                                            OnClickBg="/Images/Middle_icon.png"
+                                            OnHoverSize="60" Margin="10"
+                                            CustomCommand="{Binding SetLaneIndexCommand}"
+                                            CustomCommandParameter="{StaticResource 2}"/>
+
+            <custom:LaneSelectButton_custom BaseBg="/Images/Bottom_icon.png"
+                                            Grid.Column="4"
+                                            OnHoverBg="/Images/Bottom_icon.png"
+                                            OnClickBg="/Images/Bottom_icon.png"
+                                            OnHoverSize="60" Margin="10"
+                                            CustomCommand="{Binding SetLaneIndexCommand}"
+                                            CustomCommandParameter="{StaticResource 3}"/>
+
+            <custom:LaneSelectButton_custom BaseBg="/Images/Support_icon.png"
+                                            Grid.Column="5"
+                                            OnHoverBg="/Images/Support_icon.png"
+                                            OnClickBg="/Images/Support_icon.png"
+                                            OnHoverSize="60" Margin="10"
+                                            CustomCommand="{Binding SetLaneIndexCommand}"
+                                            CustomCommandParameter="{StaticResource 4}"/>
+
+        </Grid>
+
+        <Border Grid.Row="1" CornerRadius="30,0,30,0" Background="{StaticResource SemiDark}">
+            <ContentPresenter Content="{Binding TopUserControl}">
+                
+            </ContentPresenter>
+        </Border>
+        
+    </Grid>
+</UserControl>

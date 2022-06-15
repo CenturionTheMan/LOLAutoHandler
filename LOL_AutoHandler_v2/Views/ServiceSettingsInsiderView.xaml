@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="LOL_AutoHandler_v2.Views.Service_TopView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LOL_AutoHandler_v2.Views"
+             mc:Ignorable="d" 
+             xmlns:customTools="clr-namespace:LOL_AutoHandler_v2.CustomControls"  
+             d:DesignHeight="650" d:DesignWidth="1000"
+             x:Name="window">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".05*"/>
+        </Grid.RowDefinitions>
+
+        <!--LEFT-->
+        <Grid Grid.Column="1" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height=".1*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource Darkest}"
+                    Grid.RowSpan="8"
+                    CornerRadius="10"/>
+
+            <!--CONTENT-->
+
+            <TextBlock Grid.Row="1"
+                       Text="CHAMPIONS TO PICK"
+                       Foreground="{StaticResource SmoothGold}"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       FontWeight="ExtraBlack"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="2" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="0"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FIRST CHOICE"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="3" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="1"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="SECOND CHOICE"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="4" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="2"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="THIRD CHOICE"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="5" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="3"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FOURTH CHOICE"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="6" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="4"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FIFTH CHOICE"/>
+        </Grid>
+
+
+
+
+        <!--RIGHT-->
+        <Grid Grid.Column="3" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height=".1*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource Darkest}"
+                    Grid.RowSpan="8"
+                    CornerRadius="10"/>
+            
+            
+
+            <!--CONTENT-->
+            <TextBlock Grid.Row="1"
+                       Text="CHAMPIONS TO BAN"
+                       Foreground="{StaticResource SmoothGold}"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       FontWeight="ExtraBlack"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="2" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="0"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FIRST CHOICE"
+                                               IsBan="True"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="3" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="1"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="SECOND CHOICE"
+                                               IsBan="True"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="4" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="2"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="THIRD CHOICE"
+                                               IsBan="True"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="5" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="3"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FOURTH CHOICE"
+                                               IsBan="True"/>
+
+            <customTools:ChampionPicker_custom Grid.Row="6" 
+                                               CustomItemSource="{Binding AllChampions, Mode=TwoWay}"
+                                               TargetLaneIndex="{Binding LaneIndex}"
+                                               TargetOrderIndex="4"
+                                               ImageSize="80"
+                                               TextSize="20"
+                                               Text="FIFTH CHOICE"
+                                               IsBan="True"/>
+            
+
+        </Grid>
+
+    </Grid>
+</UserControl>

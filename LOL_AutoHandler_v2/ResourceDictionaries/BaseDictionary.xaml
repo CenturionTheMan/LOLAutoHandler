@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:LOL_AutoHandler_v2"
+                    >
+
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="RadioButton" x:Key="NavButtonsStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                            HorizontalAlignment="Stretch">
+
+
+                        <TextBlock Text="{TemplateBinding Content}"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Left"
+                                       Margin="10,0,0,0"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderThickness" Value="5,0,0,0"/>
+        <Setter Property="Margin" Value="0,10,10,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{DynamicResource GrayLike}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource LightGold}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource LightGold}"/>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource LightGold}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="ToggleButton" x:Key="StartButtons">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Ellipse x:Name="Circle" Fill="Transparent" StrokeThickness="7" Stroke="{DynamicResource GrayLike}">
+
+                        </Ellipse>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Circle" Property="Stroke" Value="{DynamicResource LightGold}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Circle" Property="Stroke" Value="{DynamicResource SmoothGold}"/>
+                            <Setter TargetName="Circle" Property="StrokeThickness" Value="9"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

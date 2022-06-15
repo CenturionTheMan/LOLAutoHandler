@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="LOL_AutoHandler_v2.Views.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LOL_AutoHandler_v2.Views"
+             xmlns:global="clr-namespace:LOL_AutoHandler_v2"
+             xmlns:customTools="clr-namespace:LOL_AutoHandler_v2.CustomControls"    
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000">
+
+    <Border  Background="{StaticResource SemiDark}" CornerRadius="0,0,30,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".05*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".05*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <customTools:StartButton_custom Height="300" Width="300" Grid.Column="1"
+                                                BaseForegroundColor="{StaticResource GrayLike}"
+                                                BaseBackgroungColor="{StaticResource Darkest}"
+                                                OnClickForeground="{StaticResource SmoothGold}"
+                                                OnHoverForeground="{StaticResource LightGold}"
+                                                TextSize="50"
+                                                BorderThickness="3"
+                                                ButtonText="START"
+                                                VerticalAlignment="Bottom"
+                                                HorizontalAlignment="Right"
+                                                IsPressed="{Binding IsServiceOn, Mode=TwoWay}"/>
+
+                    <customTools:StartButton_custom Height="250" Width="250" Grid.Column="3"
+                                            BaseForegroundColor="{StaticResource GrayLike}"
+                                            BaseBackgroungColor="{StaticResource Darkest}"
+                                            OnClickForeground="{StaticResource SmoothGold}"
+                                            OnHoverForeground="{StaticResource LightGold}"
+                                            TextSize="25"
+                                            BorderThickness="3"
+                                            ButtonText="ALLOW BANNING"
+                                            VerticalAlignment="Bottom"
+                                            HorizontalAlignment="Left"
+                                            IsPressed="{Binding IsBanService, Mode=TwoWay}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".6*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".01*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <customTools:StartButton_custom Height="250" Width="250" Grid.Column="1"
+                                            BaseForegroundColor="{StaticResource GrayLike}"
+                                            BaseBackgroungColor="{StaticResource Darkest}"
+                                            OnClickForeground="{StaticResource SmoothGold}"
+                                            OnHoverForeground="{StaticResource LightGold}"
+                                            TextSize="25"
+                                            BorderThickness="3"
+                                            ButtonText="ALLOW PICKING"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Right"
+                                            IsPressed="{Binding IsPickService, Mode=TwoWay}"/>
+
+                    <customTools:StartButton_custom Height="200" Width="200" Grid.Column="3"
+                                            BaseForegroundColor="{StaticResource GrayLike}"
+                                            BaseBackgroungColor="{StaticResource Darkest}"
+                                            OnClickForeground="{StaticResource SmoothGold}"
+                                            OnHoverForeground="{StaticResource LightGold}"
+                                            TextSize="25"
+                                            BorderThickness="3"
+                                            ButtonText="?????????"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Left"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
