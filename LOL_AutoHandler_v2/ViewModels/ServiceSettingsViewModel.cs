@@ -45,6 +45,7 @@ namespace LOL_AutoHandler_v2.ViewModels
         }
         private int _laneIndex = 0;
 
+        //Used for changing currently active Lane
         public ICommand SetLaneIndexCommand { get; private set; }
         public void SetLaneIndex(int index)
         {
@@ -53,7 +54,10 @@ namespace LOL_AutoHandler_v2.ViewModels
             OnCurrentLaneIndexChanged?.Invoke(index);
         }
 
+        //holds currently active Lane index
         public static int TapedLaneIndex = 0;
+        
+        
         //CTOR
         public ServiceSettingsViewModel(Champion[] champions)
         {

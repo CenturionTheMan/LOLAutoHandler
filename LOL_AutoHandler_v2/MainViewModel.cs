@@ -22,7 +22,7 @@ namespace LOL_AutoHandler_v2
             get { return _allChampions; }
             set { OnPropertyChanged(ref _allChampions, value); }
         }
-        public Champion[,] ToPickChampions
+        public Champion[,] ToPickChampions //[choice ]
         {
             get { return _toPickChampions; }
             set { OnPropertyChanged(ref _toPickChampions, value);}
@@ -122,8 +122,6 @@ namespace LOL_AutoHandler_v2
         #endregion
 
 
-
-
         public static MainViewModel instance;
         //-------------------------------------------CTOR
         public MainViewModel()
@@ -145,6 +143,7 @@ namespace LOL_AutoHandler_v2
             CurrentView = StartVM;
         }
 
+        //Reads champions data (locations) form file and converts it into Champions(models) classes
         void SetUpChampions()
         {
             AllChampions = Helpers.ReadChampionsFormJson(Helpers.GetProjectDirectory(@"Python\ChampionsData.json"));

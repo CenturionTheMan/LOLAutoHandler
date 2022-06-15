@@ -17,12 +17,14 @@ namespace LOL_AutoHandler_v2
         HandlePython _handlePython;
         public Thread MainThread;
 
+        //CTOR
         public ServiceLogic(MainViewModel m, HandlePython h)
         {
             _mvm = m;
             _handlePython = h;
         }
 
+        //Clenas after turning service off
         public void AbortAndCleanup()
         {
             _mvm.CurrentClientState = ClientState.NONE;
@@ -30,6 +32,7 @@ namespace LOL_AutoHandler_v2
            if(MainThread.IsAlive)MainThread.Abort();
         }
 
+        //Buffer for running logic
         public void RunLogic()
         {
             if (MainThread != null && MainThread.IsAlive) MainThread.Abort();
@@ -38,6 +41,8 @@ namespace LOL_AutoHandler_v2
             MainThread.Start();
         }
 
+
+        //Logic used for handling and managing pythons scripts
         public void UpdateLoop()
         {
             int currenToPickIndex = 0;

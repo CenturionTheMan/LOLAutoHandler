@@ -8,6 +8,7 @@ using System.Windows.Data;
 
 namespace LOL_AutoHandler_v2.Converters
 {
+
     class MultiDimensionalConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
